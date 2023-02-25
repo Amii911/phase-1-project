@@ -1,15 +1,23 @@
-function renderNeeded(showObject) {
+ function renderNeeded(showObject) {
     console.log(showObject.name)
     const ul = document.getElementById('beer-list')
 	const li = document.createElement('li')
 	li.innerText = showObject.name
-	li.addEventListener('click', () => displayBeer(showObject.name))
+	li.addEventListener('click', () => displayBeer(showObject.id))
 	ul.append(li)
 }
 
- const displayBeer = (breweries) => {
-    console.log(breweries)
+
+
+ const displayBeer = (breweryId) => {
+    console.log(breweryId)
+    const getBreweryUrl = "https://api.openbrewerydb.org/breweries" + breweryId;
+    fetch(getBreweryUrl)
+    .then(response => response.json())
+    .then(data => {
+        renderBreweryInfo(data)})
  }
+
 
 function getBeerList() {
     const getListUrl = "https://api.openbrewerydb.org/breweries"
