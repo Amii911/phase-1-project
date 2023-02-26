@@ -1,6 +1,11 @@
+
+
+document.querySelector('#beers').addEventListener('click', () => getBeerList())
+
+const ul = document.getElementById('beer-list')
+ 
  function renderNeeded(showObject) {
     console.log(showObject.name)
-    const ul = document.getElementById('beer-list')
 	const li = document.createElement('li')
 	li.innerText = showObject.name
 	li.addEventListener('click', () => displayBeer(showObject.id))
@@ -42,6 +47,7 @@ function renderBreweryInfo(info){
 
 function getBeerList() {
     const getListUrl = "https://api.openbrewerydb.org/breweries"
+    ul.innerHTML = '';
     fetch(getListUrl)
     .then(response => response.json())
     .then(response => response.forEach(showObject => {
@@ -50,4 +56,4 @@ function getBeerList() {
     )
 }
 
-getBeerList()
+// getBeerList()
