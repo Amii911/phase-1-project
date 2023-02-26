@@ -7,22 +7,20 @@
 	ul.append(li)
 }
 
-function renderBreweryInfor(info){
+function renderBreweryInfo(info){
     const divInfo = document.querySelector('#info')
     let p = document.createElement('p')
-    p.innerTest = info.name
+    p.textContent= info.name
     divInfo.appendChild(p)
     p = document.createElement('p')
-    p.innerTest = info.street
+    p.textContent = info.street
     divInfo.appendChild(p)
     p = document.createElement('p')
-    p.innerTest = info.city
+    p.textContent = info.city
     divInfo.appendChild(p)
     p = document.createElement('p')
-    p.innerTest = info.state
+    p.textContent = info.state
     divInfo.appendChild(p)
-
-
 }
 
  const displayBeer = (breweryId) => {
