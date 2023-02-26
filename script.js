@@ -11,7 +11,7 @@ const divInfo = document.querySelector('#info');
 function doRefresh() {
     ul.innerHTML = '';
     clearBreweryInfo();
-    document.querySelector('#txtCity').value = ''
+    document.querySelector('#txtCity').value = '';
 }
 
 
