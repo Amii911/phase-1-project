@@ -1,10 +1,17 @@
 document.querySelector('#beers').addEventListener('click', () => getBeerList())
 
+document.getElementById('frmSearch').addEventListener('submit', doSearchByCity)
+
+document.querySelector('#btnClear').addEventListener('click', () => doRefresh())
+
 const ul = document.getElementById('beer-list');
 const divInfo = document.querySelector('#info');
 
 
-document.getElementById('frmSearch').addEventListener('submit', doSearchByCity);
+function doRefresh() {
+    ul.innerHTML = '';
+    clearBreweryInfo();
+}
 
 
 function doSearchByCity(event) {
