@@ -1,8 +1,26 @@
 
-
 document.querySelector('#beers').addEventListener('click', () => getBeerList())
 
+
+document.querySelector('#btnSearch').addEventListener('click', () => doSearchByCity())
+
+
 const ul = document.getElementById('beer-list')
+
+
+function doSearchByCity() {
+
+    let searchCity = document.querySelector('#txtCity').value
+    const getSearchUrl = "https://api.openbrewerydb.org/breweries?by_city=" + searchCity
+    ul.innerHTML = '';
+    fetch(getSearchUrl)
+    .then(response => response.json())
+    .then(response => response.forEach(showObject => {
+        renderNeeded(showObject)
+    })
+    )
+
+}
  
  function renderNeeded(showObject) {
     console.log(showObject.name)
@@ -15,6 +33,7 @@ const ul = document.getElementById('beer-list')
 function renderBreweryInfo(info){
     const divInfo = document.querySelector('#info')
     divInfo.innerHTML = '';
+    divInfo.style.display = 'block'
     let p = document.createElement('p')
     p.textContent= info.name
     divInfo.appendChild(p)
