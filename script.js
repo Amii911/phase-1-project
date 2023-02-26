@@ -92,13 +92,14 @@ function renderBreweryInfo(info){
  }
 
 
- async function getBeerList() {
+ function getBeerList() {
     const getListUrl = "https://api.openbrewerydb.org/breweries"
     ul.innerHTML = '';
     clearBreweryInfo()
-    let resp = await fetch(getListUrl)
-    let respJson = await resp.json()
-    respJson.forEach(showObject => {
+    fetch(getListUrl)
+    .then(response => response.json())
+    .then(response => response.forEach(showObject => {
         renderNeeded(showObject)
-    });
-}
+    })
+    )
+ }
