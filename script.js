@@ -11,7 +11,7 @@
 
  const displayBeer = (breweryId) => {
     console.log(breweryId)
-    const getBreweryUrl = "https://api.openbrewerydb.org/breweries" + breweryId;
+    const getBreweryUrl = "https://api.openbrewerydb.org/breweries/" + breweryId;
     fetch(getBreweryUrl)
     .then(response => response.json())
     .then(data => {
