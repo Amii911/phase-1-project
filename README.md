@@ -4,7 +4,7 @@ This web application allows users to search for breweries in all cities within t
 
 # Technologies
 
-This web applciation uses JavaScript, HTML, and CSS.
+This web application uses JavaScript, HTML, and CSS.
 
 # API
 
