@@ -9,13 +9,16 @@
 
 function renderBreweryInfor(info){
     const divInfo = document.querySelector('#info')
-    const p = document.createElement('p')
+    let p = document.createElement('h1')
     p.innerTest = info.name
     divInfo.appendChild(p)
+    let p = document.createElement('p')
     p.innerTest = info.street
     divInfo.appendChild(p)
+    let p = document.createElement('p')
     p.innerTest = info.city
     divInfo.appendChild(p)
+    let p = document.createElement('p')
     p.innerTest = info.state
     divInfo.appendChild(p)
 
