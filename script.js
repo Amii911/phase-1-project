@@ -34,6 +34,8 @@ function doSearchByCity() {
 	const li = document.createElement('li')
 	li.innerText = showObject.name
 	li.addEventListener('click', () => displayBeer(showObject.id))
+    li.addEventListener('mouseover', (event) => {event.target.style.fontWeight = "bold"})
+    li.addEventListener('mouseout', (event) => {event.target.style.fontWeight = "normal"})
 	ul.append(li)
 }
 
