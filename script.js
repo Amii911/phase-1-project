@@ -55,21 +55,27 @@ function clearBreweryInfo() {
 function renderBreweryInfo(info){
     divInfo.innerHTML = '';
     divInfo.style.display = 'block'
+    
     let p = document.createElement('p')
     p.textContent= info.name
     divInfo.appendChild(p)
+   
     p = document.createElement('p')
     p.textContent = info.street
     divInfo.appendChild(p)
+    
     p = document.createElement('p')
     p.textContent = info.city
     divInfo.appendChild(p)
+   
     p = document.createElement('p')
     p.textContent = info.state
     divInfo.appendChild(p)
+   
     p = document.createElement('p')
     p.textContent = info.postal_code
     divInfo.appendChild(p)
+    
     p = document.createElement('p')
     p.textContent = info.website_url
     divInfo.appendChild(p)
