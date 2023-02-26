@@ -5,11 +5,11 @@ document.querySelector('#beers').addEventListener('click', () => getBeerList())
 document.querySelector('#btnSearch').addEventListener('click', () => doSearchByCity())
 
 
-const ul = document.getElementById('beer-list')
-
+const ul = document.getElementById('beer-list');
+const divInfo = document.querySelector('#info');
 
 function doSearchByCity() {
-
+    clearBreweryInfo()
     let searchCity = document.querySelector('#txtCity').value
     const getSearchUrl = "https://api.openbrewerydb.org/breweries?by_city=" + searchCity
     ul.innerHTML = '';
@@ -30,8 +30,13 @@ function doSearchByCity() {
 	ul.append(li)
 }
 
+
+function clearBreweryInfo() {
+    divInfo.innerHTML = '';
+    divInfo.style.display = 'none';
+}
+
 function renderBreweryInfo(info){
-    const divInfo = document.querySelector('#info')
     divInfo.innerHTML = '';
     divInfo.style.display = 'block'
     let p = document.createElement('p')
@@ -56,6 +61,7 @@ function renderBreweryInfo(info){
 
  const displayBeer = (breweryId) => {
     console.log(breweryId)
+    clearBreweryInfo()
     const getBreweryUrl = "https://api.openbrewerydb.org/breweries/" + breweryId;
     fetch(getBreweryUrl)
     .then(response => response.json())
@@ -67,6 +73,7 @@ function renderBreweryInfo(info){
 function getBeerList() {
     const getListUrl = "https://api.openbrewerydb.org/breweries"
     ul.innerHTML = '';
+    clearBreweryInfo()
     fetch(getListUrl)
     .then(response => response.json())
     .then(response => response.forEach(showObject => {
