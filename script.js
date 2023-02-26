@@ -1,7 +1,5 @@
 document.querySelector('#beers').addEventListener('click', () => getBeerList())
 
-
-
 const ul = document.getElementById('beer-list');
 const divInfo = document.querySelector('#info');
 
