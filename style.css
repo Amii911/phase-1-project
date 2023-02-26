@@ -10,6 +10,6 @@ body {
     display: none;
   }
 
-  input{
-    margin-left: 60px;
-  }
+form{
+  margin-top: 10px;
+}
