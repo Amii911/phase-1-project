@@ -8,18 +8,25 @@ document.querySelector('#btnSearch').addEventListener('click', () => doSearchByC
 const ul = document.getElementById('beer-list');
 const divInfo = document.querySelector('#info');
 
+
 function doSearchByCity() {
     clearBreweryInfo()
     let searchCity = document.querySelector('#txtCity').value
     const getSearchUrl = "https://api.openbrewerydb.org/breweries?by_city=" + searchCity
     ul.innerHTML = '';
+    clearBreweryInfo();
     fetch(getSearchUrl)
-    .then(response => response.json())
-    .then(response => response.forEach(showObject => {
-        renderNeeded(showObject)
-    })
-    )
+        .then(response => response.json())
+        .then(response => {
 
+            if( response.length > 0 ) {
+                response.forEach(showObject => {renderNeeded(showObject)});
+            } else {
+                let li = document.createElement('li');
+                li.textContent = "Sorry, No Breweries in that City!";
+                ul.append(li);
+            }
+    })
 }
  
  function renderNeeded(showObject) {
