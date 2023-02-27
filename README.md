@@ -10,7 +10,7 @@ Beers Cheers.png
 This web application uses JavaScript, HTML, and CSS.
 
 # Credits:
-Open Brewery DB is a free dataset and API with public information on breweries. 
+API provided by Open Brewery DB; a free dataset and API with public information on breweries. 
 
 https://www.openbrewerydb.org/documentation
 
