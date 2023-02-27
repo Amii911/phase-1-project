@@ -1,12 +1,11 @@
 # Introduction
-
 This web application allows users to search for breweries in all cities within the United States of America.
 
 # Page Preview
-Beers Cheers.png
+![alt text}(Beers Cheers.png)
+
 
 # Technologies
-
 This web application uses JavaScript, HTML, and CSS.
 
 # Credits:
