@@ -2,7 +2,7 @@
 This web application allows users to search for breweries in all cities within the United States of America.
 
 # Page Preview:
-![alt text]("\\wsl.localhost\Ubuntu\home\amii1\Development\code\Amii-projects\phase-1-project\Beers Cheers.png")
+![alt text]("\\wsl.localhost\Ubuntu\home\amii1\Development\code\Amii-projects\phase-1-project\BeersCheers.png")
 
 # Technologies:
 This web application uses JavaScript, HTML, and CSS.
